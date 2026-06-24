@@ -11,7 +11,7 @@ import {
   SidebarMenuItem,
 } from "../ui/sidebar";
 import Link from "next/link";
-import { BanknoteIcon, CoinsIcon, LayoutDashboardIcon } from "lucide-react";
+import { BanknoteIcon, WalletIcon, LayoutDashboardIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const sidebarItems = [
@@ -37,8 +37,8 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
               <Link href="/dashboard">
-                <CoinsIcon className="text-primary size-5!" />
-                <h1 className="text-2xl font-bold text-primary">Fina App</h1>
+                <WalletIcon className="text-sky size-5!" />
+                <h1 className="text-2xl font-bold text-primary">Finfinext</h1>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

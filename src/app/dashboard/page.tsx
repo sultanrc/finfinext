@@ -1,7 +1,8 @@
 import { Metadata } from "next";
+import { BalanceCards } from "./_components/balance-cards";
 
 export const metadata: Metadata = {
-  title: "Fina - Dashboard",
+  title: "Finfinext - Dashboard",
   description: "Your personal financial dashboard",
 };
 
@@ -15,7 +16,9 @@ export default function DashboardPage() {
           finances.
         </p>
       </section>
-      <section id="content"></section>
+      <section id="content">
+        <BalanceCards />
+      </section>
     </div>
   );
 }
