@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getBalanceSummary } from "@/actions/action";
+import { getBalanceSummary } from "@/actions/transaction/action";
 import { convertToIDR } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { TrendingDownIcon, TrendingUpIcon, WalletIcon } from "lucide-react";
