@@ -44,3 +44,7 @@ export const supabaseProxy = async (request: NextRequest) => {
 
   return supabaseResponse;
 };
+
+//konfigurasi cookies kalo misal nanti mau ada fitur login.
+
+//middelware cookie ditulis dua kali, pertama di request.cookies.set() untuk menulis cookie ke request, kedua di supabaseResponse.cookies.set() untuk menulis cookie ke response.

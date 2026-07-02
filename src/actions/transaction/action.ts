@@ -3,9 +3,12 @@
 import { createClient } from "@/lib/supabase/server";
 
 export async function getBalanceSummary() {
+  //dari sini
   const supabase = await createClient();
 
   const { data } = await supabase.from("transactions").select("amount, type");
+
+  //sampe sini, berfungsi utk mengambil data transaksi dari tabel "transactions" di Supabase.
 
   const { totalIncome, totalExpense, savings } = (data || []).reduce(
     (acc, tx) => {
@@ -26,6 +29,8 @@ export async function getBalanceSummary() {
     totalExpense,
     savings,
   };
+
+  // perhitungan apabila ada expenses maka akan update saldo
 }
 
 export async function getTransactions(params?: {
@@ -59,4 +64,9 @@ export async function getTransactions(params?: {
     totalData,
     totalPages: Math.ceil(totalData / limit),
   };
+
+  //fungsi ini digunakan untuk
+  //1. mengambil data transaksi
+  //2. melakukan pencarian transaksi berdasarkan deskripsi
+  //3. melakukan paginasi data transaksi
 }

@@ -18,6 +18,8 @@ export function BalanceCards() {
     queryFn: () => getBalanceSummary(),
   });
 
+  //untuk mengambil data dari db lewat getBalanceSummary() yg ada di action.ts, lalu disimpan di data. kalo error maka akan disimpan di error.
+
   if (error) {
     return (
       <div className="w-full p-4 text-sm border rounded-lg border-destructive/50 text-destructive bg-destructive/10">

@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
-}
+} //konfigurasi css dan tailwind dah intinya
 
 // export function convertToIDR(value: number) {
 //   return new Intl.NumberFormat("id-ID", {
