@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { Transaction } from "@/app/types/transaction";
 
 export async function getBalanceSummary() {
   //dari sini
@@ -69,4 +70,15 @@ export async function getTransactions(params?: {
   //1. mengambil data transaksi
   //2. melakukan pencarian transaksi berdasarkan deskripsi
   //3. melakukan paginasi data transaksi
+}
+
+export async function createTransaction(
+  payload: Omit<Transaction, "id" | "user_id" | "embedding">,
+) {
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("transactions").insert(payload);
+
+  if (error) throw new Error(error.message);
+
+  return data;
 }
